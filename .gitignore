@@ -1,4 +1,4 @@
 mvenv
 *.pyc
-cse_price_api/get_price/logs/debug.log
+logs
 db.sqlite3
