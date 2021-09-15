@@ -15,7 +15,7 @@ terraform {
     organization = "navoda"
 
     workspaces {
-      name = "gh-actions-demo"
+      name = "gh-action-demo"
     }
   }
 }
