@@ -2,7 +2,7 @@
 # @Author: Your name
 # @Date:   2021-09-13 14:12:16
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-15 21:32:44
+# @Last Modified time: 2021-09-15 21:36:30
 """
 Django settings for cse_price_api project.
 
@@ -132,7 +132,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DJANGO_ROOT = os.path.dirname('get_price')
+DJANGO_ROOT = os.path.dirname('__file__')
 
 LOGGING = {
     'version': 1,
