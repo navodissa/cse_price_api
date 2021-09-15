@@ -1,4 +1,3 @@
 *.pyc
-logs
-debug.log
+*/logs/*
 db.sqlite3

@@ -2,7 +2,7 @@
 # @Author: Your name
 # @Date:   2021-09-13 14:12:16
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-15 22:26:28
+# @Last Modified time: 2021-09-15 22:28:03
 """
 Django settings for cse_price_api project.
 
@@ -151,7 +151,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'get_price/debug.log',
+            'filename': 'get_price/logs/debug.log',
             'formatter': 'verbose',
         },
     },
