@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-15 14:56:30
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-15 21:45:00
+# @Last Modified time: 2021-09-15 21:46:21
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
@@ -37,7 +37,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with DRF Test
       run: |
-        cd ../cse_price_api
         python manage.py test
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
