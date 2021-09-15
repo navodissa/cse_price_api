@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-15 14:56:30
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-15 15:46:22
+# @Last Modified time: 2021-09-15 16:38:39
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
@@ -11,7 +11,6 @@ on:
   push:
     branches: [ devel ]
   pull_request:
-    branches: [ devel ]
 
 jobs:
   build:
