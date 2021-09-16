@@ -1,4 +1,2 @@
-mvenv
 *.pyc
-logs
 db.sqlite3

@@ -2,7 +2,7 @@
 # @Author: Your name
 # @Date:   2021-09-13 14:12:16
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-13 16:14:38
+# @Last Modified time: 2021-09-15 22:28:03
 """
 Django settings for cse_price_api project.
 
@@ -16,6 +16,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -131,6 +132,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DJANGO_ROOT = os.getcwd()
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -148,7 +151,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/home/navoda/production/price_api/cse_price_api/get_price/logs/debug.log',
+            'filename': 'get_price/logs/debug.log',
             'formatter': 'verbose',
         },
     },
