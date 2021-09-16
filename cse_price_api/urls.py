@@ -2,7 +2,7 @@
 # @Author: Your name
 # @Date:   2021-09-13 14:12:16
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-13 16:11:21
+# @Last Modified time: 2021-09-15 16:10:23
 
 """cse_price_api URL Configuration
 
@@ -22,6 +22,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Default patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', include('get_price.api.urls'))
