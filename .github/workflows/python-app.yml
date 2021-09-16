@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-15 14:56:30
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-16 13:57:10
+# @Last Modified time: 2021-09-16 16:36:31
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
@@ -10,8 +10,8 @@ name: Python application
 on:
   push:
     branches: [ feature ]
-  pull_request:
-    branches: [ devel ]
+  # pull_request:
+  #   branches: [ devel ]
 
 jobs:
   build:
@@ -96,15 +96,13 @@ jobs:
       run: exit 1
 
     - name: Terraform Apply
-      id: apply
-      if: github.ref == 'refs/heads/devel' && github.event_name == 'push'
+      if: github.ref == 'refs/heads/devel' && github.event_name == 'pull_request'
       run: |
         terraform apply -auto-approve
         echo "This is inside Terraform Apply"
-        echo ${{ steps.apply.outcome }}
 
     - name: Getting Terraform values
       run:
-        echo "This is outside Terraform Apply - Updated"
+        echo "This is outside Terraform Apply - Updated again"
         echo ${{ steps.apply.outcome }}
 
