@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-15 14:56:30
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-16 13:57:10
+# @Last Modified time: 2021-09-16 14:01:07
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
@@ -105,6 +105,6 @@ jobs:
 
     - name: Getting Terraform values
       run:
-        echo "This is outside Terraform Apply - Updated"
+        echo "This is outside Terraform Apply - Updated again"
         echo ${{ steps.apply.outcome }}
 
