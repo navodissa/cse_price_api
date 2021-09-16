@@ -43,14 +43,25 @@ resource "aws_instance" "web" {
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
-  ingress {
+  ingress = [{
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  }
+    },
+    {
+      from_port   = 22
+      to_port     = 22
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  ]
 }
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
+}
+
+output "public-dns" {
+  value = aws_instance.web.public_dns
 }
