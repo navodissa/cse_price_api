@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-15 14:56:30
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-16 16:36:31
+# @Last Modified time: 2021-09-16 16:38:31
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
@@ -40,7 +40,7 @@ jobs:
         python manage.py test
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
-      with:    # terraform_version: 0.13.0   T 
+      with:    # terraform_version: 0.13.0   Th
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     - name: Terraform Format  
