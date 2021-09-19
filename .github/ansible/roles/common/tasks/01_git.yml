@@ -1,12 +1,12 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:11:51
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 21:25:54
+# @Last Modified time: 2021-09-19 21:30:41
 ###
 # Install git and clone the repo
 
 - name: Set up configuration
-  apt:
+  yum:
     name: git
     state: latest
   become: yes
