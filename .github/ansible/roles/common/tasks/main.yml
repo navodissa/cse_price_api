@@ -1,0 +1,8 @@
+# @Author: Your name
+# @Date:   2021-09-19 19:27:13
+# @Last Modified by:   Your name
+# @Last Modified time: 2021-09-19 19:28:14
+# Configure the server for Django app
+
+- include: 01_git.yml
+- include: 02_dependencies.yml

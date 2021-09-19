@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-15 14:56:30
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 16:05:25
+# @Last Modified time: 2021-09-19 19:35:29
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
@@ -50,10 +50,6 @@ jobs:
     - name: Terraform Init
       id: init
       run: terraform init
-
-    # - name: Terraform Import
-    #   id: imprt
-    #   run: terraform import aws_key_pair.deployer navoda_me_keypair
 
     - name: Terraform Validate
       id: validate
@@ -128,4 +124,14 @@ jobs:
     - name: Running value
       run: cat dns.txt
 
+  Deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Run Playbook
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+        playbook: deploy.yml
+        directory: ../ansible
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
 

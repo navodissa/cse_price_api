@@ -25,13 +25,6 @@ provider "aws" {
   region = "us-west-2"
 }
 
-# module "key_pair" {
-#   source = "terraform-aws-modules/key-pair/aws"
-
-#   key_name   = "tf-testing"
-#   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCCIyiDhTUGTj+nsMtnFtyj1mvFAMt05vbTCbVGaXAxEIpzTzYbwz2K2rG7/eOb1wSTUXxogjchrL79dCBFG+xz5lBAGkCAMw3h0F2/HEAmWUhW8DlXJMYs8UaoojZ2LWjVZw5Uwif0jbwt/S0HYdfyPC+m7uYMM+ICExG/awV5gbOEg7TFjsxIgQYaZ1IwPP0whP01VWnT5sX+UWG4BMD5MzULwaBlzvL94WXhkB4hAuUaqZXs9UtmdFfOzNQnWO31HayO5HhD79dF317YCR5TR0CckrssB3n6TIZ1awGYDZO6bIM6vlHX/UqXh3Fi3BFrj50el7Qy6xmW19WFl1+F tf-testing"
-# }
-
 resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
