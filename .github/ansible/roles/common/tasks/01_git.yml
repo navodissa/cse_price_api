@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:11:51
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 20:53:50
+# @Last Modified time: 2021-09-19 21:08:35
 ###
 # Install git and clone the repo
 
@@ -15,3 +15,8 @@
   git:
     repo: https://github.com/navodissa/cse_price_api.git
     dest: /home/ubuntu/cse_price
+
+- name: install the latest version of Yum
+  dnf:
+    name: yum
+    state: latest
