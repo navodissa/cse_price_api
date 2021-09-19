@@ -1,13 +1,15 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:11:51
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 21:44:20
+# @Last Modified time: 2021-09-19 22:08:22
 ###
 # Install git and clone the repo
 
 - name: Set up configuration
   apt:
-    name: git
+    pkg: 
+      - git
+      - python3-pip
     state: latest
   become: yes
 
