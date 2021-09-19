@@ -1,12 +1,12 @@
 # @Author: Your name
 # @Date:   2021-09-19 22:34:25
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 22:39:11
+# @Last Modified time: 2021-09-19 22:49:22
 # Run db migrations and get all static files
 
-- name: Make Migrations
-  shell: "python3 /home/ubuntu/cse_price/manage.py makemigrations"
-  become: yes
+# - name: Make Migrations
+#   shell: "python3 /home/ubuntu/cse_price/manage.py makemigrations"
+#   become: yes
 
 - name: Migrate db
   django_manage:
