@@ -25,19 +25,19 @@ provider "aws" {
   region = "us-west-2"
 }
 
-module "key_pair" {
-  source = "terraform-aws-modules/key-pair/aws"
+# module "key_pair" {
+#   source = "terraform-aws-modules/key-pair/aws"
 
-  key_name   = "navoda_me_keypair"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAgMJhIV64QvB/xqW3LiFx733LP5aND5JJt3a7To5Iu9EmXp9DwXeTMAmRzta8TjG+V+JviJlBNCp66dBrAAPs2BowssKbTTLMrqtjN4Y2fy28+NGHaogzd3A8Jia9O4gtV9NZfws7l24scZDpxS/hK5wgPs5oHBj/q2stfaoMtdzwh8y8FbdRrQHW6Us4zBRz0tPRk9ybvkyfnkZcVir6zJfypnf/+6W6xm4wFfXmXxKVjgV3TyGIC+WE5tJgxVRqUZoUcWX3pF66zJ8ATdrbQeZLMdEDguCjCXld73giTp7A/ry79Q+gbXBllGjik5pIbv2/tWatF9qw4xU/CX8UKQ== imported-openssh-key"
-}
+#   key_name   = "tf-testing"
+#   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCCIyiDhTUGTj+nsMtnFtyj1mvFAMt05vbTCbVGaXAxEIpzTzYbwz2K2rG7/eOb1wSTUXxogjchrL79dCBFG+xz5lBAGkCAMw3h0F2/HEAmWUhW8DlXJMYs8UaoojZ2LWjVZw5Uwif0jbwt/S0HYdfyPC+m7uYMM+ICExG/awV5gbOEg7TFjsxIgQYaZ1IwPP0whP01VWnT5sX+UWG4BMD5MzULwaBlzvL94WXhkB4hAuUaqZXs9UtmdFfOzNQnWO31HayO5HhD79dF317YCR5TR0CckrssB3n6TIZ1awGYDZO6bIM6vlHX/UqXh3Fi3BFrj50el7Qy6xmW19WFl1+F tf-testing"
+# }
 
 resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
   ami                    = "ami-830c94e3"
   instance_type          = "t2.micro"
-  key_name = "navoda_me_keypair"
+  key_name = "tf-testing"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   user_data = <<-EOF
@@ -49,12 +49,19 @@ resource "aws_instance" "web" {
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
-  ingress {
+  ingress = [{
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+  },
+  {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
+  ]
 }
 
 output "web-address" {
