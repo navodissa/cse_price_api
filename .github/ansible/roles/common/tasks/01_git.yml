@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:11:51
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 22:08:22
+# @Last Modified time: 2021-09-19 22:14:57
 ###
 # Install git and clone the repo
 
@@ -9,7 +9,7 @@
   apt:
     pkg: 
       - git
-      - python3-pip
+      - pip3
     state: latest
   become: yes
 
