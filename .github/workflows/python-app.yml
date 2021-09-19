@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-15 14:56:30
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-16 18:18:01
+# @Last Modified time: 2021-09-19 14:52:18
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
@@ -58,6 +58,8 @@ jobs:
     - name: Terraform Plan
       id: plan
       if: github.event_name == 'pull_request'
+      with:
+        args: -var="aws_secret=${{ secrets.AWS_PRIVATE_KEY }}"
       run: terraform plan -no-color
       continue-on-error: true
 
@@ -98,6 +100,8 @@ jobs:
     - name: Terraform Apply
       # if: github.ref == 'refs/heads/devel' && github.event_name == 'push'
       id: apply
+      with:
+        args: -var="aws_secret=${{ secrets.AWS_PRIVATE_KEY }}"
       run: |
         terraform apply -auto-approve
 
