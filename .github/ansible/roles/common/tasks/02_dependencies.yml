@@ -1,9 +1,9 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:23:38
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 19:25:01
+# @Last Modified time: 2021-09-19 20:53:48
 # Setup project required dependencies
 
 - name: Install Dependencies
-  pip:  requirements= {{ app_dir }}/requirements.txt
+  pip:  requirements=  /home/ubuntu/cse_price/requirements.txt
   become: yes

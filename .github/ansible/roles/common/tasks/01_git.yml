@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:11:51
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 19:22:12
+# @Last Modified time: 2021-09-19 20:53:50
 ###
 # Install git and clone the repo
 
@@ -13,5 +13,5 @@
 
 - name: Clone or pull the latest code
   git:
-    repo: {{ code_repository_url }}
-    dest: {{ app_dir }}
+    repo: https://github.com/navodissa/cse_price_api.git
+    dest: /home/ubuntu/cse_price
