@@ -1,12 +1,12 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:11:51
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 21:19:30
+# @Last Modified time: 2021-09-19 21:25:54
 ###
 # Install git and clone the repo
 
 - name: Set up configuration
-  dnf:
+  apt:
     name: git
     state: latest
   become: yes
