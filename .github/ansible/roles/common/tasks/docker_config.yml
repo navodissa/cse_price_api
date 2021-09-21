@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-21 20:37:29
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-21 22:00:24
+# @Last Modified time: 2021-09-21 22:05:03
 # Install Docker and configure it
 
 # - name: Update Repos
@@ -51,6 +51,7 @@
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
+  become: yes
 
 - name: add docker apt repo
   apt_repository:
