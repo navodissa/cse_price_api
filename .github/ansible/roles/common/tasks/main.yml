@@ -1,10 +1,11 @@
 # @Author: Your name
 # @Date:   2021-09-19 19:27:13
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-19 22:44:47
+# @Last Modified time: 2021-09-21 20:55:41
 # Configure the server for Django app
 
-- include: 01_git.yml
-- include: 02_dependencies.yml
-- include: 03_migrate.yml
-- include: 04_run_app.yml
+# - include: 01_git.yml
+# - include: 02_dependencies.yml
+# - include: 03_migrate.yml
+# - include: 04_run_app.yml
+- include: docker_config.yml
