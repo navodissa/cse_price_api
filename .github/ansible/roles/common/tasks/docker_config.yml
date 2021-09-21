@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-21 20:37:29
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-21 22:05:03
+# @Last Modified time: 2021-09-21 22:12:20
 # Install Docker and configure it
 
 # - name: Update Repos
@@ -45,6 +45,7 @@
       - curl
       - gnupg2
       - software-properties-common
+      - python3-pip
   become: yes
 
 - name: add docker apt key
@@ -74,6 +75,11 @@
     name: docker
     state: started
     enabled: yes
+  become: yes
+
+- name: Install through Docker
+  command: pip3 install docker
+  ignore_errors: true
   become: yes
 
 - name: Django Image
