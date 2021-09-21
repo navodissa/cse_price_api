@@ -1,0 +1,41 @@
+# @Author: Your name
+# @Date:   2021-09-21 20:37:29
+# @Last Modified by:   Your name
+# @Last Modified time: 2021-09-21 20:54:18
+# Install Docker and configure it
+
+- name: Set up pip
+  apt:
+    pkg:
+      - python3-pip
+    state: latest
+  become: yes
+
+- name: Docker Repo
+  yum_repository:
+    name: docker
+    description: Docker yum repo
+    baseurl: https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64
+    gpgcheck: no
+
+- name: Docker Installation
+  package:
+    name: docker-ce
+    state: present
+
+- name: Install through Docker
+  command: pip3 install docker-py
+  ignore_errors: true
+
+- name: Django Image
+  docker_image:
+    name: "navoda/django-api"
+    source: pull
+
+- name: Launch django-api container
+  docker_container:
+    name: apiserver
+    exposed_ports:
+      - "8000"
+    ports:
+      - "8000:8000"
