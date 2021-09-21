@@ -1,8 +1,12 @@
 # @Author: Your name
 # @Date:   2021-09-21 20:37:29
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-21 20:54:18
+# @Last Modified time: 2021-09-21 21:28:53
 # Install Docker and configure it
+
+- name: Update Repos
+  command: apt-get update
+  become: yes
 
 - name: Set up pip
   apt:
