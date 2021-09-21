@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2021-09-21 20:37:29
 # @Last Modified by:   Your name
-# @Last Modified time: 2021-09-21 22:12:20
+# @Last Modified time: 2021-09-21 22:13:48
 # Install Docker and configure it
 
 # - name: Update Repos
@@ -86,6 +86,7 @@
   docker_image:
     name: "navoda/django-api"
     source: pull
+  become: yes
 
 - name: Launch django-api container
   docker_container:
@@ -94,3 +95,4 @@
       - "8000"
     ports:
       - "8000:8000"
+  become: yes
