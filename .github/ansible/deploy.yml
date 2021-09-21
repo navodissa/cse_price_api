@@ -1,0 +1,12 @@
+# @Author: Your name
+# @Date:   2021-09-19 19:28:48
+# @Last Modified by:   Your name
+# @Last Modified time: 2021-09-19 20:34:37
+##
+# This playbook deploys the whole app stack
+##
+- name: apply common configuration to server
+  hosts: all
+  user: ubuntu
+  roles:
+    - common

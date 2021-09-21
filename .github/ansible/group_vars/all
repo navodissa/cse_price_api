@@ -1,0 +1,11 @@
+# App Name
+app_name: django_app
+
+# Deployer User and Groups
+deployer_user: ubuntu
+
+# Github Code's Repo URL
+code_repository_url: https://github.com/navodissa/cse_price_api.git
+
+# App Directory
+app_dir: /home/{{ deployer_user }}/{{app_name}}
